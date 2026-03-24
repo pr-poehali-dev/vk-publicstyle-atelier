@@ -141,44 +141,48 @@ export default function Index() {
       </header>
 
       {/* HERO */}
-      <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" style={{ background: "hsl(var(--taupe-bg))" }}>
+      <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20" style={{ background: "hsl(var(--taupe-bg))" }}>
         {/* Декоративные цветные акценты */}
         <div className="absolute top-0 left-0 w-1 h-full" style={{ background: "linear-gradient(to bottom, hsl(var(--crimson)), hsl(var(--purple)), hsl(var(--orange)))" }} />
         <div className="absolute top-0 right-0 w-1 h-full" style={{ background: "linear-gradient(to bottom, hsl(var(--orange)), hsl(var(--purple)), hsl(var(--crimson)))" }} />
 
-        <div className="relative text-center px-8 flex flex-col items-center">
-          {/* Логотип */}
-          <div className="animate-fade-in mb-8">
+        <div className="relative text-center px-8 flex flex-col items-center w-full max-w-2xl mx-auto">
+
+          {/* Логотип — большой, текст наложен поверх снизу */}
+          <div className="relative w-full flex justify-center animate-fade-in">
             <img
               src={LOGO_IMG}
               alt="Стиль от Наумовой"
-              className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full mx-auto"
+              className="w-80 h-80 md:w-[460px] md:h-[460px] object-cover rounded-full"
               style={{
                 border: "6px solid #fff",
-                boxShadow: "0 0 0 2px hsl(var(--crimson)), 0 20px 60px rgba(0,0,0,0.25)"
+                boxShadow: "0 0 0 2px hsl(var(--crimson)), 0 20px 60px rgba(0,0,0,0.3)"
               }}
             />
+            {/* Подпись поверх нижней части логотипа */}
+            <div className="absolute bottom-8 left-0 right-0 text-center animate-fade-in-delay">
+              <div className="font-montserrat text-[11px] tracking-[0.6em] uppercase px-4 py-2 inline-block" style={{ color: "#fff", textShadow: "0 1px 8px rgba(0,0,0,0.6)", letterSpacing: "0.5em" }}>
+                Авторское ателье
+              </div>
+            </div>
           </div>
 
-          <div className="animate-fade-in-delay">
-            <div className="font-montserrat text-[11px] tracking-[0.6em] uppercase mb-4" style={{ color: "#fff", opacity: 0.85 }}>
-              Авторское ателье
-            </div>
-            <h1 className="font-cormorant text-5xl md:text-7xl font-light leading-tight mb-2" style={{ color: "#fff" }}>
+          {/* Заголовок и кнопки — без лишнего отступа сверху */}
+          <div className="animate-fade-in-delay mt-6 w-full">
+            <h1 className="font-cormorant text-5xl md:text-7xl font-light leading-tight mb-1" style={{ color: "#fff" }}>
               Стиль от
             </h1>
-            <h1 className="font-cormorant text-5xl md:text-7xl font-semibold italic leading-tight mb-8" style={{ color: "#fff" }}>
+            <h1 className="font-cormorant text-5xl md:text-7xl font-semibold italic leading-tight mb-6" style={{ color: "#fff" }}>
               Наумовой
             </h1>
 
-            {/* Цветная разделительная линия */}
-            <div className="flex items-center justify-center gap-1 mb-8 mx-auto">
+            <div className="flex items-center justify-center gap-1 mb-6">
               <div className="h-0.5 w-16" style={{ background: "hsl(var(--crimson))" }} />
               <div className="h-0.5 w-8" style={{ background: "hsl(var(--purple))" }} />
               <div className="h-0.5 w-8" style={{ background: "hsl(var(--orange))" }} />
             </div>
 
-            <p className="font-montserrat text-sm font-light tracking-wide max-w-sm mx-auto mb-10" style={{ color: "#fff", opacity: 0.9 }}>
+            <p className="font-montserrat text-sm font-light tracking-wide max-w-sm mx-auto mb-8" style={{ color: "#fff", opacity: 0.9 }}>
               Создаю одежду, в которой вы чувствуете себя собой — элегантно, удобно, с душой
             </p>
 
