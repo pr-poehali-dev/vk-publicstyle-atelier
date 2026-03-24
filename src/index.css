@@ -34,14 +34,23 @@
 
     --radius: 0.25rem;
 
-    /* Custom palette */
-    --blush: 340 30% 88%;
-    --ivory: 40 35% 96%;
-    --rose-dark: 340 25% 42%;
-    --rose-medium: 340 22% 60%;
-    --champagne: 38 40% 88%;
-    --charcoal: 20 15% 22%;
-    --gold: 38 55% 55%;
+    /* Custom palette — Стиль от Наумовой */
+    --taupe: 20 8% 62%;
+    --taupe-light: 20 10% 90%;
+    --taupe-bg: 20 8% 78%;
+    --ivory: 30 12% 94%;
+    --crimson: 345 72% 42%;
+    --crimson-light: 345 60% 55%;
+    --purple: 285 45% 48%;
+    --orange: 22 85% 50%;
+    --charcoal: 210 12% 18%;
+    --off-white: 30 15% 97%;
+    /* aliases for legacy code */
+    --blush: 345 30% 88%;
+    --rose-dark: 345 72% 42%;
+    --rose-medium: 345 50% 58%;
+    --champagne: 20 10% 85%;
+    --gold: 22 85% 50%;
   }
 }
 
