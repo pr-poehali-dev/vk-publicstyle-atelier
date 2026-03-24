@@ -11,9 +11,43 @@ const GALLERY_IMGS = [
   "https://cdn.poehali.dev/projects/0926fab3-65ec-4473-ab82-a4718cc6daac/files/00b90c6f-4a3f-4a1e-8f89-4d58f7471801.jpg",
 ];
 
+const CURRENT_MODELS = [
+  {
+    img: "https://cdn.poehali.dev/projects/0926fab3-65ec-4473-ab82-a4718cc6daac/bucket/a42ce568-a7e9-4259-80c6-a3426994cce2.jpg",
+    title: "Толстовка флисовая с капюшоном",
+    desc: "Мягкий флис, молния по всей длине, декоративный шнур. Цвет: чёрный.",
+    accent: "crimson",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/0926fab3-65ec-4473-ab82-a4718cc6daac/bucket/3b6ad4d6-75a1-4dcc-b53b-ac67765e9224.jpg",
+    title: "Велюровая блуза с запа́хом",
+    desc: "Элегантный перекрёстный запах, длинный рукав. Велюр тёмно-коричневый.",
+    accent: "purple",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/0926fab3-65ec-4473-ab82-a4718cc6daac/bucket/d5d6598a-d12e-458c-a47a-46baf1115c46.jpg",
+    title: "Худи с контрастной отделкой",
+    desc: "Жаккардовый трикотаж + клетчатая бирюзовая вставка на капюшоне и манжетах.",
+    accent: "orange",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/0926fab3-65ec-4473-ab82-a4718cc6daac/bucket/8111aa62-1834-4dfa-9ee9-c51bfbc7d3b4.jpg",
+    title: "Свитшот комби-флис с кружевом",
+    desc: "Флис + кружевная вставка спереди, высокий воротник. Цвет: тёмно-серый.",
+    accent: "crimson",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/0926fab3-65ec-4473-ab82-a4718cc6daac/bucket/1701789d-8d09-469f-9f17-6f62bdfb5f42.jpg",
+    title: "Худи оверсайз с широким воротом",
+    desc: "Пушистый флис-тедди, свободный крой, широкий отложной воротник. Цвет: бежевый.",
+    accent: "purple",
+  },
+];
+
 const navLinks = [
   { label: "О мастере", href: "#about" },
   { label: "Услуги", href: "#services" },
+  { label: "Модели", href: "#models" },
   { label: "Галерея", href: "#gallery" },
   { label: "Заявка", href: "#order" },
   { label: "Контакты", href: "#contacts" },
@@ -265,6 +299,59 @@ export default function Index() {
                 <h3 className="font-cormorant text-2xl font-medium mb-3" style={{ color: "hsl(var(--charcoal))" }}>{s.title}</h3>
                 <p className="font-montserrat text-xs leading-relaxed mb-5" style={{ color: "hsl(var(--taupe))", fontWeight: 300 }}>{s.desc}</p>
                 <div className="font-montserrat text-sm font-semibold" style={{ color: accentColors[s.accent] }}>{s.price}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* АКТУАЛЬНЫЕ МОДЕЛИ */}
+      <section id="models" className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="font-montserrat text-[11px] tracking-[0.4em] uppercase mb-4" style={{ color: "hsl(var(--crimson))" }}>
+              Принимаю заказы
+            </div>
+            <h2 className="font-cormorant text-5xl font-light" style={{ color: "hsl(var(--charcoal))" }}>
+              Актуальные модели
+            </h2>
+            <p className="font-montserrat text-sm mt-4 max-w-md mx-auto" style={{ color: "hsl(var(--taupe))", fontWeight: 300 }}>
+              Пошив по вашим размерам — выберите модель и оставьте заявку
+            </p>
+            <div className="flex items-center justify-center gap-1 mt-6">
+              <div className="h-0.5 w-12" style={{ background: "hsl(var(--crimson))" }} />
+              <div className="h-0.5 w-6" style={{ background: "hsl(var(--purple))" }} />
+              <div className="h-0.5 w-4" style={{ background: "hsl(var(--orange))" }} />
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {CURRENT_MODELS.map((m, i) => (
+              <div key={i} className="group hover-lift bg-white border" style={{ borderColor: "hsl(var(--taupe-light))" }}>
+                <div className="relative overflow-hidden" style={{ aspectRatio: "3/4" }}>
+                  <img
+                    src={m.img}
+                    alt={m.title}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div
+                    className="absolute top-3 right-3 px-3 py-1 font-montserrat text-[10px] tracking-[0.15em] uppercase text-white"
+                    style={{ background: accentColors[m.accent] }}
+                  >
+                    В наличии
+                  </div>
+                </div>
+                <div className="p-5" style={{ borderTop: `2px solid ${accentColors[m.accent]}` }}>
+                  <h3 className="font-cormorant text-xl font-medium mb-2" style={{ color: "hsl(var(--charcoal))" }}>{m.title}</h3>
+                  <p className="font-montserrat text-xs leading-relaxed mb-4" style={{ color: "hsl(var(--taupe))", fontWeight: 300 }}>{m.desc}</p>
+                  <button
+                    onClick={() => scrollTo("#order")}
+                    className="w-full py-3 font-montserrat text-[11px] tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-80"
+                    style={{ background: accentColors[m.accent] }}
+                  >
+                    Заказать по размеру
+                  </button>
+                </div>
               </div>
             ))}
           </div>
